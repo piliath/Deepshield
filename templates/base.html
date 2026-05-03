@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多模态反诈系统</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- 引入 HarmonyOS Sans SC 及备用字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'HarmonyOS Sans SC';
+            src: url('https://s1.hdslb.com/bfs/static/jinkela/long/font/HarmonyOS_Sans_SC_Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'HarmonyOS Sans SC';
+            src: url('https://s1.hdslb.com/bfs/static/jinkela/long/font/HarmonyOS_Sans_SC_Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'HarmonyOS Sans SC';
+            src: url('https://s1.hdslb.com/bfs/static/jinkela/long/font/HarmonyOS_Sans_SC_Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="light-theme">
+    <div class="sidebar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='icon/shield.svg') }}" alt="logo" class="logo-icon-img fade-in-up">
+            <span class="logo-text fade-in-up" style="animation-delay: 0.1s; font-family: 'HarmonyOS Sans SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif; font-weight: 700;">DeepShield</span>
+        </div>
+        <nav>
+            <a href="/" class="hover-lift {{ 'active' if request.path == '/' else '' }}" style="animation-delay: 0.1s;">
+                <img src="{{ url_for('static', filename='icon/dashboard.svg') }}" class="nav-icon-img" alt="主页"> 主页
+            </a>
+            <a href="/mailbox" class="hover-lift {{ 'active' if request.path == '/mailbox' else '' }}" style="animation-delay: 0.15s;">
+                <img src="{{ url_for('static', filename='icon/email.svg') }}" class="nav-icon-img" alt="邮箱"> 邮箱管理
+            </a>
+            <a href="/reports" class="hover-lift {{ 'active' if request.path == '/reports' else '' }}" style="animation-delay: 0.2s;">
+                <img src="{{ url_for('static', filename='icon/report.svg') }}" class="nav-icon-img" alt="报告"> 报告中心
+            </a>
+            <a href="/sms-input" class="hover-lift {{ 'active' if request.path == '/sms-input' else '' }}" style="animation-delay: 0.25s;">
+                <img src="{{ url_for('static', filename='icon/input.svg') }}" class="nav-icon-img" alt="录入"> 短信录入
+            </a>
+            <div class="nav-spacer"></div>
+            <a href="/settings" class="hover-lift {{ 'active' if request.path == '/settings' else '' }}" style="animation-delay: 0.3s;">
+                <img src="{{ url_for('static', filename='icon/settings.svg') }}" class="nav-icon-img" alt="设置"> 系统设置
+            </a>
+        </nav>
+    </div>
+    
+    <main class="content">
+        <header class="top-bar">
+            <h1 class="page-title">{% block title %}{% endblock %}</h1>
+            <div class="user-info">
+                <span class="status-indicator online"></span>系统运行中
+            </div>
+        </header>
+        
+        <div class="container fade-in-up" style="animation-delay: 0.2s;">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

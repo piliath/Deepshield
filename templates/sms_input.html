@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}短信录入{% endblock %}
+
+{% block content %}
+<div class="card fade-in-up" style="max-width: 900px; margin: 0 auto; animation-delay: 0.1s;">
+    <h3 style="margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 1rem;">
+        <img src="{{ url_for('static', filename='icon/input.svg') }}" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 0.5rem;"> 诈骗消息手动录入
+    </h3>
+    <p style="color: var(--text-secondary); margin-bottom: 2rem;">录入的数据将保存至 <code>data/sms_records.csv</code>，用于后续模型迭代训练。</p>
+
+    <form id="smsForm">
+        <div class="form-group">
+            <label for="smsText">消息文本</label>
+            <textarea id="smsText" placeholder="在此输入拦截到的诈骗短信全文..." style="width: 100%; height: 200px; padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border-color); font-family: inherit; font-size: 1rem;"></textarea>
+        </div>
+
+        <div class="form-group" style="margin-top: 1.5rem;">
+            <label for="smsLabel">案件类型</label>
+            <select id="smsLabel" style="width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid var(--border-color);">
+                <option value="公检法诈骗">公检法诈骗 (1)</option>
+                <option value="贷款诈骗">贷款诈骗 (2)</option>
+                <option value="客服诈骗">客服诈骗 (3)</option>
+                <option value="熟人诈骗">熟人诈骗 (4)</option>
+                <option value="正常">正常 (0)</option>
+                <option value="其它诈骗">其它诈骗</option>
+            </select>
+        </div>
+
+        <div class="modal-actions" style="margin-top: 2rem; justify-content: flex-end;">
+            <button type="submit" class="btn btn-primary" style="padding: 0.75rem 3rem;">立即保存到 CSV</button>
+            <span id="saveResult" style="margin-left: 1rem; font-weight: 600; display: none;"></span>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('smsForm');
+    const resultSpan = document.getElementById('saveResult');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const text = document.getElementById('smsText').value;
+        const label = document.getElementById('smsLabel').value;
+
+        if (!text) {
+            alert('正文不可为空');
+            return;
+        }
+
+        try {
+            const response = await fetch('/api/sms/save', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ text, label })
+            });
+            const result = await response.json();
+
+            if (result.success) {
+                resultSpan.innerText = '保存成功！';
+                resultSpan.style.color = 'var(--success-color)';
+                resultSpan.style.display = 'inline';
+                form.reset();
+                setTimeout(() => resultSpan.style.display = 'none', 3000);
+            } else {
+                alert(result.message || '保存失败');
+            }
+        } catch (error) {
+            alert('通讯失败');
+        }
+    });
+});
+</script>
+{% endblock %}

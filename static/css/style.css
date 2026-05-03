@@ -1,0 +1,429 @@
+:root {
+    --primary-color: #4F46E5;
+    --primary-hover: #4338CA;
+    --success-color: #10B981;
+    --danger-color: #EF4444;
+    --warning-color: #F59E0B;
+    --background-color: #F8FAFC;
+    --card-background: #FFFFFF;
+    --sidebar-background: #FFFFFF;
+    --text-primary: #1E293B;
+    --text-secondary: #64748B;
+    --border-color: #E2E8F0;
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --hover-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'HarmonyOS Sans SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: var(--sidebar-background);
+    border-right: 1px solid var(--border-color);
+    padding: 1.5rem;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.logo-icon-img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    /* 转换黑色 SVG 为主题蓝 (#4F46E5) */
+    filter: invert(27%) sepia(85%) saturate(2256%) hue-rotate(228deg) brightness(95%) contrast(100%);
+}
+
+.logo-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-grow: 1;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: var(--text-secondary);
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+nav a:hover {
+    background: #F1F5F9;
+    color: var(--primary-color);
+}
+
+nav a.active {
+    background: #EEF2FF;
+    color: var(--primary-color);
+}
+
+.nav-icon-img {
+    width: 20px;
+    height: 20px;
+    /* 转换黑色 SVG 为灰色 (#64748B) */
+    filter: invert(47%) sepia(11%) saturate(735%) hue-rotate(181deg) brightness(95%) contrast(89%);
+    transition: all 0.2s ease;
+}
+
+nav a:hover .nav-icon-img, nav a.active .nav-icon-img {
+    /* Hover 时转为主题蓝 */
+    filter: invert(27%) sepia(85%) saturate(2256%) hue-rotate(228deg) brightness(95%) contrast(100%);
+    transform: scale(1.1) rotate(5deg);
+}
+
+.nav-spacer {
+    flex-grow: 1;
+}
+
+/* Content Area */
+.content {
+    margin-left: 250px;
+    flex-grow: 1;
+    padding: 2rem;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.page-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.status-indicator.online {
+    background: var(--success-color);
+    box-shadow: 0 0 8px var(--success-color);
+}
+
+/* Cards & Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Make content icons grey by default */
+.stat-label img, .content h3 img, .content h4 img, .empty-state img {
+    filter: invert(47%) sepia(11%) saturate(735%) hue-rotate(181deg) brightness(95%) contrast(89%);
+}
+
+.card {
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--hover-shadow);
+    border-color: var(--primary-color);
+}
+
+/* Mailbox Specific */
+.mailbox-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+}
+
+.mailbox-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.mailbox-info h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+}
+
+.mailbox-status {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 9999px;
+    font-weight: 600;
+}
+
+.mailbox-status.active {
+    background: #D1FAE5;
+    color: #065F46;
+}
+
+.mailbox-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.stat-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.mailbox-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s, box-shadow 0.2s;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+.btn-danger {
+    background: #FEE2E2;
+    color: var(--danger-color);
+}
+
+.btn-danger:hover {
+    background: #FECACA;
+}
+
+.fab {
+    position: fixed;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.39);
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+    overflow: visible;
+}
+
+#openModalBtn {
+    top: 500px;
+    bottom: auto;
+}
+
+.fab:hover {
+    transform: scale(1.1) rotate(90deg);
+    background: var(--primary-hover);
+}
+
+.fab::before {
+    content: '添加监控邮箱';
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%) translateX(15px) rotate(0deg);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.fab:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(5px) rotate(-90deg);
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: white;
+    width: 450px;
+    border-radius: 1.25rem;
+    padding: 2rem;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    animation: modalIn 0.3s ease-out;
+}
+
+@keyframes modalIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #475569;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.modal-actions .btn {
+    flex: 1;
+}
+
+.btn-secondary {
+    background: #F1F5F9;
+    color: #475569;
+}
+
+.btn-secondary:hover {
+    background: #E2E8F0;
+}
+
+/* Base Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    opacity: 0;
+}
+
+.hover-lift {
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease !important;
+}
+
+.hover-lift:hover {
+    transform: translateY(-2px);
+}
+

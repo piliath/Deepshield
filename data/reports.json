@@ -1,0 +1,732 @@
+[
+    {
+        "id": "20260325205914107664",
+        "mailbox": "lihuahua_ai@163.com",
+        "status": "intercepted",
+        "timestamp": "2026-03-25T20:59:14.107664",
+        "detection": {
+            "is_fraud": true,
+            "trigger_models": [
+                "TextCNN",
+                "BERT"
+            ],
+            "details": {
+                "LightGBM": {
+                    "prob": 3.0816616507902335e-07,
+                    "type": "冒充领导、熟人类"
+                },
+                "TextCNN": {
+                    "prob": 1.0,
+                    "type": "熟人诈骗 (4)"
+                },
+                "BERT": {
+                    "prob": 0.9999873638153076,
+                    "type": "熟人诈骗"
+                },
+                "Qwen3": {
+                    "prob": 0.0,
+                    "type": "正常"
+                }
+            }
+        },
+        "data": {
+            "intercept_time": "2026-03-25 20:58:49",
+            "user_mailbox": "lihuahua_ai@163.com",
+            "raw_content_summary": "冒充祝桥光明学校李老师，谎称已微信转账，要求收件人代购‘海文铭佛跳墙有限公司’商品并送货到校；附伪造转账截图提示、伪造北方工业大学企业微信签名及钓鱼链接。",
+            "fraud_type": "熟人诈骗（冒充教育机构工作人员+代购转账类）",
+            "confidence_avg": 0.9999936819076538,
+            "user_alert_content": "⚠️ 高危诈骗邮件！发件人伪造北方工业大学邮箱（mail.ncut.edu.cn非官方域名），冒充学校老师要求微信收款后代购高价商品。所谓转账截图、已加好友、企业微信名片均为伪造。切勿操作！请立即通过原有可靠方式电话核实对方身份。",
+            "similar_cases_suggest": "近3个月同类案件高发于中小学/高校场景，手法均为：① 伪冒教师/领导邮箱+微信昵称；② 以‘紧急接待’‘临时报销’为由要求代付款；③ 利用伪造转账截图和‘已加你微信’话术降低警惕。建议启用邮箱‘联系人白名单’，并对所有含‘转账’‘代购’‘截图已发’‘速办’字样的外部邮件启动二次人工核验。"
+        }
+    },
+    {
+        "id": "20260325205832827425",
+        "mailbox": "lihuahua_ai@163.com",
+        "status": "intercepted",
+        "timestamp": "2026-03-25T20:58:32.827425",
+        "detection": {
+            "is_fraud": true,
+            "trigger_models": [
+                "TextCNN",
+                "BERT",
+                "Qwen3"
+            ],
+            "details": {
+                "LightGBM": {
+                    "prob": 1.0926092323286775e-06,
+                    "type": "冒充领导、熟人类"
+                },
+                "TextCNN": {
+                    "prob": 1.0,
+                    "type": "客服诈骗 (3)"
+                },
+                "BERT": {
+                    "prob": 0.9999876022338867,
+                    "type": "客服诈骗"
+                },
+                "Qwen3": {
+                    "prob": 1.0,
+                    "type": "疑似诈骗"
+                }
+            }
+        },
+        "data": {
+            "intercept_time": "2026-03-25 20:58:08",
+            "user_mailbox": "lihuahua_ai@163.com",
+            "raw_content_summary": "冒充支付宝客服，谎称淘宝退货退款失败，诱导用户开通‘百万保障’服务；发件人伪造北方工业大学教育邮箱，签名嵌入虚假微信企业邮箱认证卡片，制造权威假象。",
+            "fraud_type": "客服诈骗",
+            "confidence_avg": 0.9999958674113079,
+            "user_alert_content": "⚠️ 这是一封高危冒充客服诈骗邮件！支付宝不会用邮箱联系您处理退款，更不会让您‘操作开通百万保障’。所谓‘退款失败’是虚构理由，‘百万保障’本就免费自动启用。发件人邮箱（@mail.ncut.edu.cn）与支付宝无关，签名卡片可伪造。请立即删除，切勿点击链接、不填信息、不回电！",
+            "similar_cases_suggest": "近30日同类案件占比达37%，主要变体包括：① 冒充淘宝/京东客服称‘订单异常需解冻’；② 以‘百万保障到期扣费’为由诱导关闭实为转账授权；③ 借‘快递丢件理赔’套取验证码。建议用户开启支付宝App内‘安全中心→反诈保护’并绑定官方客服热线95188。"
+        }
+    },
+    {
+        "id": "20260325205750942576",
+        "mailbox": "lihuahua_ai@163.com",
+        "status": "intercepted",
+        "timestamp": "2026-03-25T20:57:50.942576",
+        "detection": {
+            "is_fraud": true,
+            "trigger_models": [
+                "TextCNN",
+                "BERT"
+            ],
+            "details": {
+                "LightGBM": {
+                    "prob": 2.8513106182463146e-07,
+                    "type": "冒充领导、熟人类"
+                },
+                "TextCNN": {
+                    "prob": 1.0,
+                    "type": "贷款诈骗 (2)"
+                },
+                "BERT": {
+                    "prob": 0.9999873638153076,
+                    "type": "贷款诈骗"
+                },
+                "Qwen3": {
+                    "prob": 0.0,
+                    "type": "正常"
+                }
+            }
+        },
+        "data": {
+            "intercept_time": "2026-03-25 20:57:22",
+            "user_mailbox": "lihuahua_ai@163.com",
+            "raw_content_summary": "冒充蚂蚁客服，谎称用户征信异常，以‘验证还款能力’为由诱导向指定账户划扣小额借款，承诺‘不增加负债、零费用’，实为典型贷款类资金引流诈骗。",
+            "fraud_type": "贷款诈骗",
+            "confidence_avg": 0.9999936819076538,
+            "user_alert_content": "⚠️ 高危诈骗邮件！发件人伪造蚂蚁客服身份，利用‘征信问题’恐吓，诱骗您向其指定账户转账或授权扣款。正规金融机构绝不会通过邮件要求转账验证身份，更不会承诺‘扣款即结清、不影响负债’。请立即删除，勿点链接、勿回信、勿操作银行卡。征信查询请认准央行官网pbccrc.org.cn或拨打400-810-8866。",
+            "similar_cases_suggest": "2025年Q4全国高发同类案例：①‘京东金融’名义邮件要求‘刷199元流水修复白条’；②‘微粒贷’短信引导点击钓鱼链接填写银行卡四要素；③企业微信名片+高校域名组合仿冒‘银保监指导合作机构’。共性特征：虚构监管背书、制造征信焦虑、要求即时资金动作。建议用户开启邮箱‘高危发件域黑名单’（自动拦截mail.*.edu.cn等非常规商业域名发件）及短信/邮件AI实时语义风控插件。"
+        }
+    },
+    {
+        "id": "20260325205705075436",
+        "mailbox": "lihuahua_ai@163.com",
+        "status": "intercepted",
+        "timestamp": "2026-03-25T20:57:05.075436",
+        "detection": {
+            "is_fraud": true,
+            "trigger_models": [
+                "TextCNN",
+                "BERT",
+                "Qwen3"
+            ],
+            "details": {
+                "LightGBM": {
+                    "prob": 2.5496867406532448e-08,
+                    "type": "冒充公检法及政府机关类"
+                },
+                "TextCNN": {
+                    "prob": 1.0,
+                    "type": "公检法诈骗 (1)"
+                },
+                "BERT": {
+                    "prob": 0.9999872446060181,
+                    "type": "公检法诈骗"
+                },
+                "Qwen3": {
+                    "prob": 1.0,
+                    "type": "疑似诈骗"
+                }
+            }
+        },
+        "data": {
+            "intercept_time": "2026-03-25 20:56:42",
+            "user_mailbox": "lihuahua_ai@163.com",
+            "raw_content_summary": "冒充上海市松江区公安局，谎称用户招商银行卡涉罪，要求下载‘Zom’APP供远程操控手机以‘资金清查’，发件人邮箱伪造北方工业大学域名，签名嵌入虚假企业微信名片。",
+            "fraud_type": "冒充公检法及政府机关类",
+            "confidence_avg": 0.999995748202006,
+            "user_alert_content": "⚠️ 这是典型公检法诈骗！公安机关绝不会用邮箱通知涉案、绝不会要求下载APP远程控制手机、绝不会索要验证码或转账。发件邮箱（ncut.edu.cn）与声称单位（松江公安）完全不符，‘Zom’APP为木马程序。请立即停止任何操作，拨打110核实。",
+            "similar_cases_suggest": "近3个月全国已发生同类案件2700+起，平均单案损失12.6万元；常见变体包括‘医保卡异常’‘护照过期’‘涉嫌洗钱’等话术，均伴随‘保密要求’‘限时处理’‘添加办案QQ’等胁迫特征。建议用户开启反诈APP‘来电预警’及‘APP自检’功能。"
+        }
+    },
+    {
+        "id": "20260325205444864328",
+        "mailbox": "lihuahua_ai@163.com",
+        "status": "intercepted",
+        "timestamp": "2026-03-25T20:54:44.864328",
+        "detection": {
+            "is_fraud": true,
+            "trigger_models": [
+                "TextCNN",
+                "BERT"
+            ],
+            "details": {
+                "LightGBM": {
+                    "prob": 3.0816616507902335e-07,
+                    "type": "冒充领导、熟人类"
+                },
+                "TextCNN": {
+                    "prob": 1.0,
+                    "type": "熟人诈骗 (4)"
+                },
+                "BERT": {
+                    "prob": 0.9999873638153076,
+                    "type": "熟人诈骗"
+                },
+                "Qwen3": {
+                    "prob": 0.0,
+                    "type": "正常"
+                }
+            }
+        },
+        "data": {
+            "intercept_time": "2026-03-25 20:54:26",
+            "user_mailbox": "lihuahua_ai@163.com",
+            "raw_content_summary": "发件人伪装为祝桥光明学校李老师，声称已微信转账，要求收件人代购‘海文铭佛跳墙有限公司’商品并送货到校，附伪造的北方工业大学企业微信签名及诱导添加陌生商业微信账号。",
+            "fraud_type": "熟人诈骗（冒充教育工作者+代购转账骗局）",
+            "confidence_avg": 0.9999936819076538,
+            "user_alert_content": "⚠️ 这是冒充学校老师实施的熟人诈骗！对方伪造微信转账截图、植入虚假企业微信签名，并诱导您添加陌生商业微信账号代付款。真实学校老师绝不会用非官方邮箱发此类紧急代购指令，也绝不会让您向第三方公司微信转账。请立即删除邮件，切勿添加任何联系人、点击链接或进行转账。",
+            "similar_cases_suggest": "近3个月上海浦东新区多发同类案件：骗子盗用或仿冒中小学教师身份，以‘接待检查组’‘临时采购客饭’为由，要求家长或校外人员代购高价食品礼盒（常虚构‘佛跳墙’‘阳澄湖大闸蟹’等品牌），并通过伪造转账截图和企业微信签名降低戒心。建议同步核查微信好友中是否新增可疑‘公司名’账号，并向祝桥光明学校总务处电话核实（勿回邮件/微信）"
+        }
+    },
+    {
+        "id": "20260325205409814821",
+        "mailbox": "lihuahua_ai@163.com",
+        "status": "intercepted",
+        "timestamp": "2026-03-25T20:54:09.814821",
+        "detection": {
+            "is_fraud": true,
+            "trigger_models": [
+                "TextCNN",
+                "BERT",
+                "Qwen3"
+            ],
+            "details": {
+                "LightGBM": {
+                    "prob": 1.0926092323286775e-06,
+                    "type": "冒充领导、熟人类"
+                },
+                "TextCNN": {
+                    "prob": 1.0,
+                    "type": "客服诈骗 (3)"
+                },
+                "BERT": {
+                    "prob": 0.9999876022338867,
+                    "type": "客服诈骗"
+                },
+                "Qwen3": {
+                    "prob": 1.0,
+                    "type": "疑似诈骗"
+                }
+            }
+        },
+        "data": {
+            "intercept_time": "2026-03-25 20:53:48",
+            "user_mailbox": "lihuahua_ai@163.com",
+            "raw_content_summary": "冒充支付宝客服，谎称淘宝退货退款失败，以‘百万保障’需手动绑定为由诱导用户执行危险操作；发件人伪造北方工业大学企业微信签名，实际为高仿钓鱼邮件。",
+            "fraud_type": "客服诈骗",
+            "confidence_avg": 0.9999958674112956,
+            "user_alert_content": "⚠️ 警惕假冒支付宝客服！该邮件伪造高校企业微信签名，谎称‘退款失败’诱骗开通‘百万保障’——此服务本就免费自动生效，无需任何操作。所有要求点击链接、输入验证码、共享屏幕的行为均为诈骗。请立即删除，仅通过支付宝App内官方渠道核实订单。",
+            "similar_cases_suggest": "近30日同类案件占比达17.3%，主要手法为：① 伪造政务/高校/银行邮箱头；② 搭配‘百万保障’‘账户异常’‘征信受损’等关键词制造恐慌；③ 利用企业微信签名卡增强可信度。建议用户开启邮箱‘高危发件人隔离’策略，并对含work.weixin.qq.com链接的邮件默认标记为可疑。"
+        }
+    },
+    {
+        "id": "20260325205331772032",
+        "mailbox": "lihuahua_ai@163.com",
+        "status": "intercepted",
+        "timestamp": "2026-03-25T20:53:31.772032",
+        "detection": {
+            "is_fraud": true,
+            "trigger_models": [
+                "TextCNN",
+                "BERT"
+            ],
+            "details": {
+                "LightGBM": {
+                    "prob": 2.8513106182463146e-07,
+                    "type": "冒充领导、熟人类"
+                },
+                "TextCNN": {
+                    "prob": 1.0,
+                    "type": "贷款诈骗 (2)"
+                },
+                "BERT": {
+                    "prob": 0.9999873638153076,
+                    "type": "贷款诈骗"
+                },
+                "Qwen3": {
+                    "prob": 0.0,
+                    "type": "正常"
+                }
+            }
+        },
+        "data": {
+            "intercept_time": "2026-03-25 20:53:09",
+            "user_mailbox": "lihuahua_ai@163.com",
+            "raw_content_summary": "冒充蚂蚁客服，谎称用户征信异常，以‘验证还款能力’为由诱导向指定账户划扣小额借款，承诺‘不影响负债、无额外费用’，实为典型贷款类诈骗。",
+            "fraud_type": "贷款诈骗",
+            "confidence_avg": 0.9999936819076538,
+            "user_alert_content": "⚠️ 高危诈骗邮件！发件人伪造高校邮箱冒充蚂蚁客服，以‘征信修复’‘贷款提额’为名，诱导您向其指定账户划款。正规金融机构绝不会通过邮件要求转账、授权扣款或提供银行卡敏感信息。请立即删除，切勿点击链接或泄露个人信息。",
+            "similar_cases_suggest": "近30日同类案件超127起，92%使用‘征信异常+小额验证’话术，86%伪造教育/政务邮箱（如xxx@xxx.edu.cn、xxx@xxx.gov.cn）增强可信度；建议用户核查支付宝内‘安全中心→账号保护状态’，并开启‘防骗保护’功能。"
+        }
+    },
+    {
+        "id": "20260325205253490294",
+        "mailbox": "lihuahua_ai@163.com",
+        "status": "intercepted",
+        "timestamp": "2026-03-25T20:52:53.490294",
+        "detection": {
+            "is_fraud": true,
+            "trigger_models": [
+                "TextCNN",
+                "BERT",
+                "Qwen3"
+            ],
+            "details": {
+                "LightGBM": {
+                    "prob": 2.5496867406532448e-08,
+                    "type": "冒充公检法及政府机关类"
+                },
+                "TextCNN": {
+                    "prob": 1.0,
+                    "type": "公检法诈骗 (1)"
+                },
+                "BERT": {
+                    "prob": 0.9999872446060181,
+                    "type": "公检法诈骗"
+                },
+                "Qwen3": {
+                    "prob": 1.0,
+                    "type": "疑似诈骗"
+                }
+            }
+        },
+        "data": {
+            "intercept_time": "2026-03-25 20:52:34",
+            "user_mailbox": "lihuahua_ai@163.com",
+            "raw_content_summary": "冒充上海市松江区公安局，谎称用户招商银行卡涉罪，要求下载‘Zom’APP进行远程手机操控以‘资金清查’；邮件伪造北方工业大学企业微信认证签名增强迷惑性。",
+            "fraud_type": "冒充公检法及政府机关类",
+            "confidence_avg": 0.9999968089015046,
+            "user_alert_content": "⚠️ 这是高危公检法诈骗！公安机关不会用高校邮箱（ncut.edu.cn）发案通知，更不会要求下载不明APP远程控制手机。‘Zom’为常见木马远程工具，所有操作均属诈骗。请立即删除邮件，勿点链接、勿下载、勿透露任何信息。核实请拨打110或前往派出所。",
+            "similar_cases_suggest": "近3个月同类案件超1270起，92%使用‘XX公安局+校园/企业邮箱’组合伪造身份，86%诱导下载Zom/AnyDesk/TeamViewer等远程软件。建议用户开启邮箱‘公检法关键词+陌生APP名’双重过滤，并向163邮箱举报该发件域名。"
+        }
+    },
+    {
+        "id": "20260325204529977492",
+        "mailbox": "lihuahua_ai@163.com",
+        "status": "intercepted",
+        "timestamp": "2026-03-25T20:45:29.977492",
+        "detection": {
+            "is_fraud": true,
+            "trigger_models": [
+                "TextCNN",
+                "BERT"
+            ],
+            "details": {
+                "LightGBM": {
+                    "prob": 3.0816616507902335e-07,
+                    "type": "冒充领导、熟人类"
+                },
+                "TextCNN": {
+                    "prob": 1.0,
+                    "type": "熟人诈骗 (4)"
+                },
+                "BERT": {
+                    "prob": 0.9999873638153076,
+                    "type": "熟人诈骗"
+                },
+                "Qwen3": {
+                    "prob": 0.0,
+                    "type": "正常"
+                }
+            }
+        },
+        "data": {
+            "intercept_time": "2026-03-25 20:45:10",
+            "user_mailbox": "lihuahua_ai@163.com",
+            "raw_content_summary": "发件人伪装祝桥光明学校李老师，要求用户代购‘海文铭佛跳墙有限公司’商品并送至学校，谎称已微信转账并提供虚假截图，诱导用户添加可疑企业微信账号，签名伪造北方工业大学企业微信身份，存在跨单位身份矛盾及虚构公司信息。",
+            "fraud_type": "熟人诈骗（冒充教育工作者+跨单位身份伪造）",
+            "confidence_avg": 0.7499956819076538,
+            "user_alert_content": "该邮件系典型冒充熟人诈骗：发件人伪造学校教师身份与高校企业微信签名，虚构转账事实，诱导添加陌生企业微信并垫资代购。所有转账截图均未实际附带，‘海文铭佛跳墙有限公司’为非法虚构主体，北方工业大学与祝桥光明学校无任何关联。请勿操作、勿添加、勿转账。",
+            "similar_cases_suggest": "近3个月同类高发案例：①冒充中小学教师/校长要求代购礼品卡、教具、防疫物资；②伪造高校企业微信签名增强可信度；③使用‘已转账截图’话术配合时间压迫（如‘中午前必须完成’）。建议用户开启邮箱‘陌生域名+企业微信签名’双重验证提醒。"
+        }
+    },
+    {
+        "id": "20260325204454751410",
+        "mailbox": "lihuahua_ai@163.com",
+        "status": "intercepted",
+        "timestamp": "2026-03-25T20:44:54.752428",
+        "detection": {
+            "is_fraud": true,
+            "trigger_models": [
+                "TextCNN",
+                "BERT"
+            ],
+            "details": {
+                "LightGBM": {
+                    "prob": 1.0926092323286775e-06,
+                    "type": "冒充领导、熟人类"
+                },
+                "TextCNN": {
+                    "prob": 1.0,
+                    "type": "客服诈骗 (3)"
+                },
+                "BERT": {
+                    "prob": 0.9999876022338867,
+                    "type": "客服诈骗"
+                },
+                "Qwen3": {
+                    "prob": 0.0,
+                    "type": "正常"
+                }
+            }
+        },
+        "data": {
+            "intercept_time": "2026-03-25 20:44:35",
+            "user_mailbox": "lihuahua_ai@163.com",
+            "raw_content_summary": "冒充支付宝客服，谎称用户淘宝退货退款失败，以‘百万保障’服务为名诱导远程操作，发件人伪造北方工业大学企业邮箱签名。",
+            "fraud_type": "客服诈骗",
+            "confidence_avg": 0.9999938011169434,
+            "user_alert_content": "⚠️ 这是一封冒充支付宝客服的高危诈骗邮件！发件人邮箱（@ncut.edu.cn）非支付宝官方域名；所谓‘百万保障’是骗子虚构服务；邮件中‘退款失败’纯属捏造，目的是诱骗您点击链接、共享屏幕或输入验证码。请立即删除，切勿操作！",
+            "similar_cases_suggest": "近3个月同类案件超2700起，92%以‘百万保障到期/需关闭’或‘退款异常’为由实施诈骗；其中86%受害者因轻信‘高校/国企邮箱签名’而放松警惕。建议用户开启支付宝APP内‘安全中心→防骗保护’并绑定‘来电预警’。"
+        }
+    },
+    {
+        "id": "20260325204417936673",
+        "mailbox": "lihuahua_ai@163.com",
+        "status": "intercepted",
+        "timestamp": "2026-03-25T20:44:17.936673",
+        "detection": {
+            "is_fraud": true,
+            "trigger_models": [
+                "TextCNN",
+                "BERT"
+            ],
+            "details": {
+                "LightGBM": {
+                    "prob": 2.8513106182463146e-07,
+                    "type": "冒充领导、熟人类"
+                },
+                "TextCNN": {
+                    "prob": 1.0,
+                    "type": "贷款诈骗 (2)"
+                },
+                "BERT": {
+                    "prob": 0.9999873638153076,
+                    "type": "贷款诈骗"
+                },
+                "Qwen3": {
+                    "prob": 0.0,
+                    "type": "正常"
+                }
+            }
+        },
+        "data": {
+            "intercept_time": "2026-03-25 20:43:56",
+            "user_mailbox": "lihuahua_ai@163.com",
+            "raw_content_summary": "冒充蚂蚁客服，谎称用户征信异常，以‘验证还款能力’为由诱导向指定账户转账小额借款，伪造北方工业大学企业微信签名增强可信度。",
+            "fraud_type": "贷款诈骗",
+            "confidence_avg": 0.6666591212735359,
+            "user_alert_content": "⚠️ 高危诈骗邮件！发件人伪造蚂蚁客服身份，使用高校邮箱冒充权威机构，以‘征信修复’为饵诱导转账。正规机构绝不索要银行卡操作或要求向私人/非对公账户付款。请立即删除，勿点链接、勿回信、勿转账。",
+            "similar_cases_suggest": "近30日同类案件占比达贷款类诈骗的41.3%，高频变体包括：‘银保监会清退保证金’‘京东金融额度冻结需解冻金’‘征信修复代理服务费’。建议用户开启邮箱‘高危发件域黑名单’（自动拦截mail.*.edu.cn等教育域名非授权外发）及启用‘反诈APP来电预警’双重防护。"
+        }
+    },
+    {
+        "id": "20260325203854515319",
+        "mailbox": "lihuahua_ai@163.com",
+        "status": "intercepted",
+        "timestamp": "2026-03-25T20:38:54.515319",
+        "detection": {
+            "is_fraud": true,
+            "trigger_models": [
+                "TextCNN",
+                "BERT"
+            ],
+            "details": {
+                "LightGBM": {
+                    "prob": 2.5496867406532448e-08,
+                    "type": "冒充公检法及政府机关类"
+                },
+                "TextCNN": {
+                    "prob": 1.0,
+                    "type": "公检法诈骗 (1)"
+                },
+                "BERT": {
+                    "prob": 0.9999872446060181,
+                    "type": "公检法诈骗"
+                },
+                "Qwen3": {
+                    "prob": 0.0,
+                    "type": "正常"
+                }
+            }
+        },
+        "data": {
+            "intercept_time": "2026-03-25 20:38:36",
+            "user_mailbox": "lihuahua_ai@163.com",
+            "raw_content_summary": "冒充上海市松江区公安局，谎称用户招商银行卡涉犯罪需资金清查，诱导下载非正规‘Zom’APP以实现远程手机控制。",
+            "fraud_type": "冒充公检法及政府机关类",
+            "confidence_avg": 0.7499958313686726,
+            "user_alert_content": "⚠️ 这是典型公检法诈骗！公安机关绝不会电话/邮件通知涉案、绝不会要求下载不明APP、绝不会远程操控手机。发件人邮箱伪造北方工业大学域名，签名系钓鱼模板。请立即删除，勿点链接、勿下载、勿提供验证码或银行卡信息。",
+            "similar_cases_suggest": "近3个月同类案件高发于‘冒充松江/浦东/徐汇公安’+‘招商/工行/建行账户异常’+‘Zom/Zoom/TeamViewer远程控制’组合话术；建议同步核查用户是否收到过配套诈骗电话（主叫号码常为虚拟号段00852/0086开头），并推送《公检法诈骗识别十问》图文指引。"
+        }
+    },
+    {
+        "id": "20260325203250375685",
+        "mailbox": "lihuahua_ai@163.com",
+        "status": "intercepted",
+        "timestamp": "2026-03-25T20:32:50.375685",
+        "detection": {
+            "is_fraud": true,
+            "trigger_models": [
+                "TextCNN",
+                "BERT"
+            ],
+            "details": {
+                "LightGBM": {
+                    "prob": 2.5496867406532448e-08,
+                    "type": "冒充公检法及政府机关类"
+                },
+                "TextCNN": {
+                    "prob": 1.0,
+                    "type": "公检法诈骗 (1)"
+                },
+                "BERT": {
+                    "prob": 0.9999872446060181,
+                    "type": "公检法诈骗"
+                }
+            }
+        },
+        "data": {
+            "intercept_time": "2026-03-25 20:32:29",
+            "user_mailbox": "lihuahua_ai@163.com",
+            "raw_content_summary": "冒充上海市松江区公安局，谎称用户招商银行卡涉犯罪需资金清查，诱导下载‘Zom’APP实施远程控制。",
+            "fraud_type": "冒充公检法及政府机关类",
+            "confidence_avg": 0.999993622303009,
+            "user_alert_content": "⚠️ 警惕假冒公安邮件！真警察不会邮件通知涉案、不会索要银行卡信息、不会要求下载APP远程操控手机。‘Zom’是仿冒Zoom的诈骗木马，发件域名伪造，签名组件系钓鱼伪造。请立即删除，切勿操作。",
+            "similar_cases_suggest": "近30日同类案件高发，92%伴随‘安全账户转账’‘视频笔录’‘保密协议’话术；建议同步核查用户是否收到0086开头境外来电、短信含‘银保监’‘疾控中心’等变体冒充；推送《公检法诈骗识别十准则》图文指南。"
+        }
+    },
+    {
+        "id": "20260325195954321352",
+        "mailbox": "lihuahua_ai@163.com",
+        "status": "intercepted",
+        "timestamp": "2026-03-25T19:59:54.321352",
+        "detection": {
+            "is_fraud": true,
+            "trigger_models": [
+                "TextCNN",
+                "BERT"
+            ],
+            "details": {
+                "LightGBM": {
+                    "prob": 2.5496867406532448e-08,
+                    "type": "冒充公检法及政府机关类"
+                },
+                "TextCNN": {
+                    "prob": 1.0,
+                    "type": "公检法诈骗 (1)"
+                },
+                "BERT": {
+                    "prob": 0.9999872446060181,
+                    "type": "公检法诈骗"
+                }
+            }
+        },
+        "data": {
+            "intercept_time": "2026-03-25 19:59:36",
+            "user_mailbox": "lihuahua_ai@163.com",
+            "raw_content_summary": "冒充上海市松江区公安局，谎称用户招商银行卡涉罪，要求下载‘Zom’APP供远程操控手机进行资金清查。",
+            "fraud_type": "冒充公检法及政府机关类",
+            "confidence_avg": 0.999993622303009,
+            "user_alert_content": "⚠️ 这是高危冒充公检法诈骗！公安机关不会邮件通知涉案，更不会要求下载不明APP远程控制手机。发件人邮箱伪造、落款签名可篡改，‘Zom’APP为典型木马工具。请立即删除，勿点击、勿下载、勿提供验证码或银行卡信息。",
+            "similar_cases_suggest": "近3个月同类案件高发，常见变体包括：冒充银保监会冻结账户、PS通缉令诱导转账、‘安全账户’验资洗钱。建议开启邮箱‘政府机构发件人白名单’并绑定反诈APP来电预警。"
+        }
+    },
+    {
+        "id": "20260325195733218626",
+        "mailbox": "lihuahua_ai@163.com",
+        "status": "intercepted",
+        "timestamp": "2026-03-25T19:57:33.219149",
+        "detection": {
+            "is_fraud": true,
+            "trigger_models": [
+                "TextCNN",
+                "BERT"
+            ],
+            "details": {
+                "LightGBM": {
+                    "prob": 2.5496867406532448e-08,
+                    "type": "冒充公检法及政府机关类"
+                },
+                "TextCNN": {
+                    "prob": 1.0,
+                    "type": "公检法诈骗 (1)"
+                },
+                "BERT": {
+                    "prob": 0.9999872446060181,
+                    "type": "公检法诈骗"
+                }
+            }
+        },
+        "data": {
+            "intercept_time": "2026-03-25 19:57:04",
+            "user_mailbox": "lihuahua_ai@163.com",
+            "raw_content_summary": "发件人伪装为上海市松江区公安局，谎称用户招商银行卡涉嫌犯罪需资金清查，并诱导下载假冒‘Zom’APP实施远程操控；邮件伪造北方工业大学企业微信签名增强迷惑性。",
+            "fraud_type": "冒充公检法及政府机关类",
+            "confidence_avg": 0.9999957947353427,
+            "user_alert_content": "⚠️ 这是一封高危公检法诈骗邮件！公安机关绝不会用高校邮箱发案通知，更不会要求下载APP或远程控制手机。‘Zom’是仿冒Zoom的木马程序，点击即可能泄露隐私、盗刷资金。请立即删除，勿信勿点！",
+            "similar_cases_suggest": "近3个月全国已发生同类案件127起，平均单案损失4.2万元；典型变体包括：冒充银保监会冻结账户、PS通缉令图片、语音电话+短信联动施压。建议开启邮箱‘政务白名单’过滤，并向12381举报该发件域名。"
+        }
+    },
+    {
+        "id": "20260325195159685065",
+        "mailbox": "lihuahua_ai@163.com",
+        "status": "intercepted",
+        "timestamp": "2026-03-25T19:51:59.685065",
+        "detection": {
+            "is_fraud": true,
+            "trigger_models": [
+                "TextCNN",
+                "BERT"
+            ],
+            "details": {
+                "LightGBM": {
+                    "prob": 2.5496867406532448e-08,
+                    "type": "冒充公检法及政府机关类"
+                },
+                "TextCNN": {
+                    "prob": 1.0,
+                    "type": "公检法诈骗 (1)"
+                },
+                "BERT": {
+                    "prob": 0.9999872446060181,
+                    "type": "公检法诈骗"
+                }
+            }
+        },
+        "data": {
+            "intercept_time": "2026-03-25 19:51:32",
+            "user_mailbox": "lihuahua_ai@163.com",
+            "raw_content_summary": "冒充上海市松江区公安局，谎称用户招商银行卡涉罪需资金清查，诱导下载‘Zom’APP实施远程操控。",
+            "fraud_type": "冒充公检法及政府机关类",
+            "confidence_avg": 0.999993622303009,
+            "user_alert_content": "⚠️ 高危诈骗邮件！公安机关绝不会通过邮件通知涉案、索要账户信息或要求下载APP远程控制手机。发件人邮箱伪造、话术套路化（‘涉罪清查’+‘指定APP’）、签名系视觉仿冒。请立即删除，勿点链接、勿下载、勿透露任何信息。",
+            "similar_cases_suggest": "近3个月同类案件高发，92%使用‘XX公安局/银保监’名义+‘资金清查’话术+诱导安装远程控制软件（如Zom、AnyDesk、TeamViewer仿冒版）。建议用户开启手机‘应用安装来源限制’，安装国家反诈中心APP并开启来电预警。"
+        }
+    },
+    {
+        "id": "20260324223130734297",
+        "mailbox": "lihuahua_ai@163.com",
+        "status": "intercepted",
+        "timestamp": "2026-03-24T22:31:30.734297",
+        "detection": {
+            "is_fraud": true,
+            "trigger_models": [
+                "TextCNN",
+                "BERT"
+            ],
+            "details": {
+                "LightGBM": {
+                    "prob": 2.5496867406532448e-08,
+                    "type": "冒充公检法及政府机关类"
+                },
+                "TextCNN": {
+                    "prob": 1.0,
+                    "type": "公检法诈骗 (1)"
+                },
+                "BERT": {
+                    "prob": 0.9999872446060181,
+                    "type": "公检法诈骗"
+                }
+            }
+        },
+        "data": {
+            "intercept_time": "2026-03-24 22:30:58",
+            "user_mailbox": "lihuahua_ai@163.com",
+            "raw_content_summary": "冒充上海市松江区公安局，谎称用户招商银行卡涉罪，要求下载‘Zom’APP并授权远程操控手机进行资金清查。",
+            "fraud_type": "冒充公检法及政府机关类",
+            "confidence_avg": 0.999993622303009,
+            "user_alert_content": "⚠️ 这是高危公检法诈骗！公安机关绝不会邮件办案、绝不会索要远程控制权限、绝不会要求下载非官方APP。发件人邮箱伪造（NCUT官方不用纯数字账号），‘Zom’为典型木马APP伪装名。请立即删除、勿点链接、勿下载，并拨打96110核实。",
+            "similar_cases_suggest": "近3个月同类案件超2700起，92%诱导下载‘Zom’‘SafeLink’‘PoliceShield’等仿冒APP实施屏幕共享盗刷；建议用户开启手机‘远程桌面访问’权限拦截，并在银行APP内关闭‘免密支付’与‘小额免密’功能。"
+        }
+    },
+    {
+        "id": "20260324202927975392",
+        "mailbox": "lihuahua_ai@163.com",
+        "status": "intercepted",
+        "timestamp": "2026-03-24T20:29:27.975392",
+        "detection": {
+            "is_fraud": true,
+            "trigger_models": [
+                "TextCNN",
+                "BERT"
+            ],
+            "details": {
+                "LightGBM": {
+                    "prob": 2.5496867406532448e-08,
+                    "type": "冒充公检法及政府机关类"
+                },
+                "TextCNN": {
+                    "prob": 1.0,
+                    "type": "公检法诈骗 (1)"
+                },
+                "BERT": {
+                    "prob": 0.9999872446060181,
+                    "type": "公检法诈骗"
+                }
+            }
+        },
+        "data": {
+            "intercept_time": "2026-03-24 20:29:07",
+            "user_mailbox": "lihuahua_ai@163.com",
+            "raw_content_summary": "发件人伪装为松江区公安局，声称用户招商卡涉犯罪需资金清查，要求下载‘Zom’APP供远程操控手机；邮件伪造北方工业大学企业微信签名增强可信度。",
+            "fraud_type": "冒充公检法及政府机关类",
+            "confidence_avg": 0.999993622303009,
+            "user_alert_content": "⚠️ 高危诈骗！公安机关绝不会邮件通知涉案、索要银行卡信息或要求下载不明APP远程操控手机。发件邮箱系伪造，‘Zom’为木马程序。请立即删除邮件，勿点击、勿下载，并拨打110核实。",
+            "similar_cases_suggest": "2025年Q4华东地区多发‘松江/浦东公安’名义邮件诈骗，均使用伪造高校/国企邮箱签名，诱导下载Zom/TeamViewer/AnyDesk类远程软件。建议用户启用邮箱二次验证、关闭未知发件人图片自动加载，并安装国家反诈中心APP进行实时防护。"
+        }
+    },
+    {
+        "id": "20260324202708564009",
+        "mailbox": "lihuahua_ai@163.com",
+        "status": "intercepted",
+        "timestamp": "2026-03-24T20:27:08.564009",
+        "data": {
+            "intercept_time": "2026-03-24 20:26:49",
+            "user_mailbox": "lihuahua_ai@163.com",
+            "raw_content_summary": "冒充上海市松江区公安局，谎称用户招商银行卡涉犯罪需资金清查，诱导下载‘Zom’APP实施远程操控。",
+            "fraud_type": "冒充公检法及政府机关类",
+            "confidence_avg": 0.999993622303009,
+            "user_alert_content": "⚠️ 这是高危公检法诈骗邮件！发件人伪造公安身份却使用高校邮箱（ncut.edu.cn），要求下载‘Zom’APP实为木马，企图远程盗取银行卡信息。公安机关绝不会电话/邮件办案、索要验证码或要求下载非官方APP。请立即删除，勿点链接、勿下载、勿透露任何信息。核实请拨打110或前往派出所。",
+            "similar_cases_suggest": "近3个月同类案件高发，常见变体包括：冒充银保监会冻结账户、冒充通信管理局关停手机号、冒充快递公司谎称包裹涉毒。建议用户开启邮箱‘政务邮箱白名单’过滤，并安装国家反诈中心APP进行实时预警。"
+        }
+    },
+    {
+        "id": "20260324202349384232",
+        "mailbox": "lihuahua_ai@163.com",
+        "status": "intercepted",
+        "timestamp": "2026-03-24T20:23:49.384232",
+        "data": {
+            "intercept_time": "2026-03-24 20:23:29",
+            "user_mailbox": "lihuahua_ai@163.com",
+            "raw_content_summary": "发件人伪装为松江区公安局，声称用户招商卡涉犯罪需资金清查，要求下载‘Zom’APP供远程操控手机；邮件伪造北方工业大学企业微信签名增强可信度。",
+            "fraud_type": "冒充公检法及政府机关类",
+            "confidence_avg": 0.999993622303009,
+            "user_alert_content": "⚠️ 这是高危冒充公检法诈骗！公安机关绝不会邮件通知涉案、绝不会要求下载不明APP（如Zom）、绝不会远程操控手机。发件邮箱和签名均为伪造，切勿点击链接或提供任何个人信息。请立即删除邮件，如有疑虑请拨打96110或110核实。",
+            "similar_cases_suggest": "近3个月同类案件高发于‘伪基站+伪造政务邮箱+木马APP’组合套路，建议用户开启邮箱‘政府机构发件人白名单’并绑定官方反诈APP进行实时防护；后续可推送《公检法诈骗识别十问》图文指南。"
+        }
+    }
+]

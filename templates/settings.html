@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}系统设置{% endblock %}
+
+{% block content %}
+<div class="card fade-in-up" style="max-width: 800px; margin: 0 auto; animation-delay: 0.1s;">
+    <h3 style="margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+        <img src="{{ url_for('static', filename='icon/settings.svg') }}" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 0.5rem;"> 全局配置
+    </h3>
+    
+    <form id="settingsForm">
+        <div class="form-group">
+            <label>DashScope (Qwen) API Key</label>
+            <input type="password" id="apiKey" placeholder="sk-..." value="">
+            <small style="color: var(--text-secondary);">用于调用 Qwen-Plus 生成分析报告。已加密存储。</small>
+        </div>
+
+        <div class="grid-container" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+            <div class="form-group">
+                <label>扫描频率 (秒)</label>
+                <input type="number" id="fetchInterval" value="300" min="30">
+                <small style="color: var(--text-secondary);">建议不低于 60 秒，以免被网易限制连接。</small>
+            </div>
+            
+            <div class="form-group">
+                <label>本地模型模式</label>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-top: 0.5rem;">
+                    <input type="checkbox" id="useQwen3" style="width: auto;">
+                    <span>开启 Qwen3-0.6B 联合判定</span>
+                </div>
+                <small style="color: var(--text-secondary);">开启后需额外消耗约 2GB 显存。</small>
+            </div>
+        </div>
+
+        <div class="modal-actions" style="margin-top: 2rem;">
+            <button type="submit" class="btn btn-primary" style="width: 200px;">保存配置</button>
+            <span id="saveStatus" style="margin-left: 1rem; color: var(--success-color); display: none;">已保存并生效</span>
+        </div>
+    </form>
+
+    <div class="card" style="margin-top: 3rem; background: #FEE2E2; border: 1px solid #FCA5A5;">
+        <h4 style="color: var(--danger-color); margin-bottom: 0.5rem;">危险区域</h4>
+        <p style="font-size: 0.875rem; color: #991B1B; margin-bottom: 1rem;">清空所有拦截记录或移除所有监控邮箱，此操作不可逆。</p>
+        <button class="btn btn-danger" onclick="confirmReset()">重置系统数据</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+    const form = document.getElementById('settingsForm');
+    
+    // 初始化加载
+    const loadSettings = async () => {
+        const resp = await fetch('/api/settings');
+        const settings = await resp.json();
+        document.getElementById('apiKey').value = settings.dashscope_api_key || '';
+        document.getElementById('fetchInterval').value = settings.fetch_interval || 300;
+        document.getElementById('useQwen3').checked = settings.use_qwen3_model || false;
+    };
+
+    form.onsubmit = async (e) => {
+        e.preventDefault();
+        const data = {
+            dashscope_api_key: document.getElementById('apiKey').value,
+            fetch_interval: parseInt(document.getElementById('fetchInterval').value),
+            use_qwen3_model: document.getElementById('useQwen3').checked
+        };
+
+        const resp = await fetch('/api/settings', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        });
+        
+        if (resp.ok) {
+            const status = document.getElementById('saveStatus');
+            status.style.display = 'inline';
+            setTimeout(() => status.style.display = 'none', 3000);
+        }
+    };
+
+    loadSettings();
+});
+
+function confirmReset() {
+    if(confirm('确定要清空所有拦截报告吗？')) {
+        // 后端实现略
+        alert('功能待接入...');
+    }
+}
+</script>
+{% endblock %}

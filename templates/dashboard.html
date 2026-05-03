@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}主页{% endblock %}
+
+{% block content %}
+<div class="page-description" style="color: var(--text-secondary); margin-bottom: 2rem;">
+    实时监控全网诈骗动向，以下是系统拦截的诈骗数据统计。
+</div>
+
+<div class="grid-container" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 2rem;">
+    <div class="card stat-card fade-in-up" style="animation-delay: 0.1s;">
+        <div class="stat-label">
+            <img src="{{ url_for('static', filename='icon/shield.svg') }}" style="width: 16px; height: 16px; vertical-align: middle;"> 拦截总数
+        </div>
+        <div class="stat-value" id="totalIntercepted">0</div>
+        <div class="stat-trend positive" style="color: var(--success-color); font-size: 0.75rem;">+12% 较上周已更新</div>
+    </div>
+    <div class="card stat-card fade-in-up" style="animation-delay: 0.2s;">
+        <div class="stat-label">
+            <img src="{{ url_for('static', filename='icon/warning.svg') }}" style="width: 16px; height: 16px; vertical-align: middle;"> 今日新增
+        </div>
+        <div class="stat-value" id="todayIntercepted">0</div>
+        <div class="stat-trend" style="color: var(--warning-color); font-size: 0.75rem;">待处理报警: 2</div>
+    </div>
+    <div class="card stat-card fade-in-up" style="animation-delay: 0.3s;">
+        <div class="stat-label">
+            <img src="{{ url_for('static', filename='icon/email.svg') }}" style="width: 16px; height: 16px; vertical-align: middle;"> 监控邮箱
+        </div>
+        <div class="stat-value" id="mailboxCount">0</div>
+        <div class="stat-trend" style="color: var(--text-secondary); font-size: 0.75rem;">正常检查频率: 5m</div>
+    </div>
+    <div class="card stat-card fade-in-up" style="animation-delay: 0.4s;">
+        <div class="stat-label">
+            <img src="{{ url_for('static', filename='icon/dashboard.svg') }}" style="width: 16px; height: 16px; vertical-align: middle;"> 今日活跃诈骗
+        </div>
+        <div class="stat-value" id="activeFraudType" style="font-size: 1.1rem; color: var(--danger-color); font-weight: 700;">正在统计...</div>
+        <div class="stat-trend" id="activeFraudProb" style="color: var(--text-secondary); font-size: 0.75rem;">占比: --%</div>
+    </div>
+</div>
+
+<div class="card">
+    <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; align-items: center;">
+        <h3 style="color: var(--text-primary);">最近拦截记录</h3>
+        <a href="/reports" style="color: var(--primary-color); font-size: 0.875rem; text-decoration: none; font-weight: 500;">查看全部 →</a>
+    </div>
+    <table class="data-table" style="width: 100%; border-collapse: collapse; font-size: 0.875rem;">
+        <thead>
+            <tr style="text-align: left; border-bottom: 1px solid var(--border-color); color: var(--text-secondary);">
+                <th style="padding: 1rem 0;">拦截时间</th>
+                <th>发件人</th>
+                <th>主题</th>
+                <th>预测类别</th>
+                <th>置信度</th>
+                <th style="text-align: center;">操作</th>
+            </tr>
+        </thead>
+        <tbody id="recentList">
+            <tr>
+                <td colspan="6" style="text-align: center; padding: 4rem; color: var(--text-secondary);">
+                    暂无拦截记录
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

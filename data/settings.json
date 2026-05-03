@@ -1,0 +1,5 @@
+{
+    "dashscope_api_key": "sk-0a06d587a4e941a9b8317b384f9be616",
+    "fetch_interval": 300,
+    "use_qwen3_model": true
+}

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}报告中心{% endblock %}
+
+{% block content %}
+<div class="reports-header" style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center;">
+    <p style="color: var(--text-secondary);">这里记录了系统近期拦截的所有疑似诈骗邮件。点击记录即可查看 Qwen-Plus 的深度反诈报告。</p>
+    <div style="display: flex; gap: 0.5rem;">
+        <button id="sortByTime" class="btn btn-secondary">按时间排序</button>
+        <button id="sortByCategory" class="btn btn-secondary">按类别排序</button>
+    </div>
+</div>
+
+<div class="grid-container" id="reportsList">
+    <!-- 报告列表卡片 -->
+    <div class="loading-state" style="grid-column: 1/-1; text-align: center; padding: 4rem; color: var(--text-secondary);">
+        加载近期拦截数据中...
+    </div>
+</div>
+
+<!-- 报告详情弹窗 (侧滑抽屉或模态框) -->
+<div id="reportDetailModal" class="modal-overlay">
+    <div class="modal" style="width: 800px; max-width: 90vw; max-height: 85vh; overflow-y: auto;">
+        <div class="modal-header" style="position: sticky; top: 0; background: white; z-index: 10; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
+            <div style="display: flex; flex-direction: column;">
+                <h3 id="detailTitle">诈骗风险分析报告</h3>
+                <span id="detailSubTitle" style="color: var(--text-secondary); font-size: 0.875rem;">报告 ID: ---</span>
+            </div>
+            <button id="closeDetailBtn" style="border: none; background: none; cursor: pointer; font-size: 1.5rem;">&times;</button>
+        </div>
+        
+        <div class="report-content" style="margin-top: 1.5rem;">
+            <div class="report-section">
+                <h4 style="color: var(--primary-color); margin-bottom: 1rem;"><img src="{{ url_for('static', filename='icon/shield.svg') }}" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 0.25rem;"> 大模型风险定性</h4>
+                <div id="aiAnalysis" class="card" style="background: #F8FAFC; border: none; padding: 1.5rem; line-height: 1.6; color: var(--text-primary); white-space: pre-wrap;">
+                    正在加载分析...
+                </div>
+            </div>
+
+            <div class="grid-container" style="grid-template-columns: 1fr 1fr; margin-top: 1.5rem; gap: 1rem;">
+                <div class="report-section">
+                    <h4 style="margin-bottom: 0.75rem;"><img src="{{ url_for('static', filename='icon/email.svg') }}" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 0.25rem;"> 邮件原文摘要</h4>
+                    <div id="emailSummary" class="card" style="font-size: 0.875rem; color: var(--text-secondary);">
+                    </div>
+                </div>
+                <div class="report-section">
+                    <h4 style="margin-bottom: 0.75rem;"><img src="{{ url_for('static', filename='icon/dashboard.svg') }}" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 0.25rem;"> 判定分值</h4>
+                    <div id="modelScores" class="card">
+                    </div>
+                </div>
+            </div>
+
+            <div class="report-section" style="margin-top: 1.5rem;">
+                <h4 style="margin-bottom: 0.75rem;"><img src="{{ url_for('static', filename='icon/report.svg') }}" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 0.25rem;"> 防范建议</h4>
+                <div id="suggest" class="card" style="background: #FFFBEB; border-left: 4px solid var(--warning-color);">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/reports.js') }}"></script>
+{% endblock %}

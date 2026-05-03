@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}邮箱管理{% endblock %}
+
+{% block content %}
+<div class="page-description" style="color: var(--text-secondary); margin-bottom: 2rem;">
+    管理受监控的网易163邮箱，添加授权码以启用自动拦截功能。
+</div>
+
+<div id="mailboxList" class="grid-container">
+    <!-- 邮箱卡片将由 JS 动态渲染 -->
+    <div class="loading-state" style="grid-column: 1/-1; text-align: center; padding: 4rem;">
+        <div class="spinner"></div>
+        加载中...
+    </div>
+</div>
+
+<button class="fab" id="openModalBtn" title="添加新邮箱">
+    <span style="font-size: 2rem; line-height: 1;">+</span>
+</button>
+
+<!-- 添加邮箱模态框 -->
+<div id="modalOverlay" class="modal-overlay">
+    <div class="modal">
+        <div class="modal-header">
+            <h3>添加监控邮箱</h3>
+            <button id="closeModalBtn" style="border: none; background: none; cursor: pointer; font-size: 1.5rem; color: #94A3B8;">&times;</button>
+        </div>
+        <form id="addMailboxForm">
+            <div class="form-group">
+                <label for="email">163 邮箱地址</label>
+                <input type="email" id="email" placeholder="example@163.com" required>
+            </div>
+            <div class="form-group">
+                <label for="authCode">IMAP 授权码</label>
+                <input type="password" id="authCode" placeholder="网易生成的16位授权码" required>
+                <small style="color: #94A3B8; display: block; margin-top: 0.5rem; font-size: 0.75rem;">注意：非邮箱登录密码，需在网易网页版开启 IMAP/SMTP 获得。</small>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn btn-secondary" id="cancelBtn">取消</button>
+                <button type="submit" class="btn btn-primary">立即添加</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/mailbox.js') }}"></script>
+{% endblock %}
