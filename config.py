@@ -14,7 +14,7 @@ os.makedirs(DATA_DIR, exist_ok=True)
 
 # 默认设置
 DEFAULT_SETTINGS = {
-    "dashscope_api_key": "sk-0a06d587a4e941a9b8317b384f9be616",
+    "dashscope_api_key": "",
     "fetch_interval": 300,
     "use_qwen3_model": False
 }
